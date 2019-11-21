@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- first template for borehole related datamodels based on the example of a borehole geometry log -->
 <swe:DataRecord xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.3" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/swe/2.0 ../../../../schemas/sweCommon/2.0.1/swe.xsd">
 	<swe:identifier>http://www.gfz-potsdam.de/bgl</swe:identifier>
 	<swe:label>Borehole Geometry Log</swe:label>
