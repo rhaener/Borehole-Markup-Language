@@ -1,1 +1,78 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.3" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/swe/2.0 ../../../../schemas/sweCommon/2.0.1/swe.xsd">
+	<swe:identifier>http://www.gfz-potsdam.de/bgl</swe:identifier>
+	<swe:label>Borehole Geometry Log</swe:label>
+	<swe:description>Borehole Geometry Log</swe:description>
+	<swe:field name="depth">
+		<swe:Quantity>
+			<swe:uom code="m"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="azimuth">
+		<swe:Quantity definition="bml:azimuth">
+			<swe:description>True north-based azimuth of the borehole segment in degrees. Borehole azimuth is measured in angular degrees from north. If available the caliper arm, the azimuth is provided for, is given.</swe:description>
+			<swe:quality>
+				<swe:Category>
+					<swe:description>Qualitative classification of the information on azimuth and inclination of the borehole segment</swe:description>
+					<swe:codeSpace xlink:href="codelist"/>
+					<swe:value>bad</swe:value>
+				</swe:Category>
+			</swe:quality>
+			<swe:quality>
+				<swe:QuantityRange>
+					<swe:uom code="degree"/>
+					<swe:value>0.1 0.1</swe:value>
+				</swe:QuantityRange>
+			</swe:quality>
+			<!-- rhaener 2019-11-19 nil values and nil reasons are candiates for vocabularies -->
+			<swe:nilValues>
+				<swe:NilValues>
+					<swe:nilValue reason="absent">-999.25</swe:nilValue>
+				</swe:NilValues>
+			</swe:nilValues>
+			<swe:uom code="degree"/>
+			<swe:constraint>
+				<swe:AllowedValues>
+					<swe:interval>0.0 360.0</swe:interval>
+				</swe:AllowedValues>
+			</swe:constraint>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="inclination" xlink:arcrole="bml:deviation"/>
+	<swe:field name="deviation" xlink:arcrole="bml:inclination">
+		<swe:Quantity definition="bml:deviation">
+			<swe:description>Inclination of the borehole segment in degrees. Borehole deviation is measured in angular degrees from vertical often called inclination. When the inclination is known, true vertical depth can be determined from the top of the hole. True Vertical Depth (TVD) can be determined from deviation information.</swe:description>
+			<swe:quality>
+				<swe:Category>
+					<swe:description>Qualitative classification of the information on azimuth and inclination of the borehole segment</swe:description>
+					<swe:codeSpace xlink:href="codelist"/>
+					<swe:value>bad</swe:value>
+				</swe:Category>
+			</swe:quality>
+			<swe:quality>
+				<swe:QuantityRange>
+					<swe:uom code="degree"/>
+					<swe:value>0.1 0.1</swe:value>
+				</swe:QuantityRange>
+			</swe:quality>
+			<swe:uom code="degree"/>
+			<swe:constraint>
+				<swe:AllowedValues>
+					<swe:interval>0.0 180.0</swe:interval>
+				</swe:AllowedValues>
+			</swe:constraint>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="caliper1">
+		<swe:Quantity definition="bml:caliperArm1">
+			<swe:description>Caliper Arm 1</swe:description>
+			<swe:uom code="m"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field name="caliper2">
+		<swe:Quantity definition="bml:caliperArm2">
+			<swe:description>Caliper Arm 2</swe:description>
+			<swe:uom code="m"/>
+		</swe:Quantity>
+	</swe:field>
+</swe:DataRecord>
