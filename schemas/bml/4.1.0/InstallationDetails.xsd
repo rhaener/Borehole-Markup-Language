@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.1" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   #################################################################################### -->
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../gml/3.2.1/gml.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="Measurements.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<!-- ##################################################################################################################################################### -->
+	<xs:element name="installationDetails" type="bml:InstallationDetailsType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>[en] Most recent installation.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ##################################################################################################################################################### -->
+	<xs:complexType name="InstallationDetailsType">
+		<xs:sequence>
+			<xs:element ref="bml:AbstractInstallationDetailMeasurement" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ##################################################################################################################################################### -->
+</xs:schema>
